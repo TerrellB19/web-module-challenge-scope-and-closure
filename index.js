@@ -29,12 +29,11 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
+  1. What is the difference between counter1 and counter2? Counter1 has its variable declared within the function. While counter2 has its variable defined outside of its scope.
   
-  2. Which of the two uses a closure? How can you tell?
+  2. Which of the two uses a closure? How can you tell? they both are, because they are both reaching outside of their scope to grab information from a variable.
   
-  3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+  3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? I would use counter1 if I dont need to access the count variable outside of the function, and I would use counter2 if I needed to do the exact opposite. 
 */
 
 // counter1 code
@@ -64,9 +63,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
-}
+function inning(){
+    let result = Math.floor(Math.random() * 3)
+    return result
+} 
+console.log('task 2:', inning())
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -83,9 +84,18 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
-}
+function finalScore(callback, inning){
+  let home = 0;
+  let away = 0;
+  for(let i = 0; i < inning; i++){
+    home = home + callback();
+    away = away + callback();
+  } return{
+    'Home': home,
+    'Away': away
+  };
+
+} console.log(finalScore(inning, 9))
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -101,10 +111,13 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  return{
+    'Home': inning(),
+    'Away': inning()
+  }
 
-}
+} console.log(getInningScore(inning))
 
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
