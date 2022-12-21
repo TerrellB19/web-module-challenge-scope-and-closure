@@ -95,7 +95,7 @@ function finalScore(callback, inning){
     'Away': away
   };
 
-} console.log(finalScore(inning, 9))
+} console.log('task 3:', finalScore(inning, 9))
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -117,7 +117,7 @@ function getInningScore(inning) {
     'Away': inning()
   }
 
-} console.log(getInningScore(inning))
+} console.log('task 4:', getInningScore(inning))
 
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
